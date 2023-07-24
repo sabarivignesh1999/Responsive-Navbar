@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-image: url(img.avif);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        nav{
+            background-color: rgb(49, 16, 167);
+            font-size: large;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            
+        }
+        nav  li{
+            display: inline;
+            margin: 0 10px;
+        }
+        a{
+            text-decoration: none;
+            color: greenyellow;
+        }
+        .logo{
+            font-size: larger;
+            font-weight: bolder;
+        }
+        nav a:hover{
+            color: yellow;
+        }
+        .menu-line{
+            width: 20px;
+            height: 3px;
+            background-color: greenyellow;
+            margin-bottom: 4px;
+        }
+        #menu{
+            cursor: pointer;
+            display: none;
+        }
+        @media all and (max-width:600px){
+            nav{
+                flex-direction: column;
+            }
+            nav li{
+                display: block;
+                padding: 10px 0;
+            }
+            ul{
+                text-align: center;
+                padding: 0;
+                display: none;
+            }
+            .logo{
+                align-self: flex-start;
+                margin: 10px 0px 0px 30px;
+            }
+            #menu{
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 25px;
+            }
+            .showmenu{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="">LOVE❤️</a>
+        </div>
+        <ul>
+            <li><a href="">Affection</a></li>
+            <li><a href="">Caring</a></li>
+            <li><a href="">Hope</a></li>
+            <li><a href="">காதல்❤️</a></li>
+        </ul>
+       <div id="menu">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+       </div>
+    </nav>
+</body>
+<script>
+    const menu = document.querySelector('#menu')
+    const menuList = document.querySelector('nav ul')
+    menu.addEventListener('click',()=>{
+        menuList.classList.toggle('showmenu')
+    })
+</script>
+</html>
